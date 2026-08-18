@@ -3,9 +3,10 @@ set $mod Mod4
 
 font pango:DepartureMono Nerd Font 8
 
+output * bg /home/shouki/.modules/hyprpaper/6.jpg fill
 exec dex --autostart --environment i3
 exec nm-applet
-exec ~/.fehbg
+exec_always systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP
 #exec_always --no-startup-id picom -b
 
 client.focused #12110d #514c42 #d0c6ad
