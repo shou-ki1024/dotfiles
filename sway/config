@@ -6,14 +6,15 @@ font pango:DepartureMono Nerd Font 8
 output * bg /home/shouki/.modules/hyprpaper/6.jpg fill
 exec dex --autostart --environment i3
 exec nm-applet
-exec_always systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec_always systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
 #exec_always --no-startup-id picom -b
 
 client.focused #12110d #514c42 #d0c6ad
 client.unfocused #27241e #1d1b17 #d0c6ad 
 floating_minimum_size 100 x 100
 titlebar_padding 20 2
-gaps inner 10
+gaps inner 2
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
